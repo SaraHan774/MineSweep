@@ -31,6 +31,5 @@ fun MainNavigation() {
 
     NavHost(navController = navController, startDestination = "main") {
         composable("main") { MineScreen(modifier = Modifier.padding(16.dp)) }
-        // TODO: Add more destinations
     }
 }

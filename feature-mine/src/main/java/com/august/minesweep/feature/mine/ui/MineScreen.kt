@@ -16,7 +16,7 @@
 
 package com.august.minesweep.feature.mine.ui
 
-import com.august.minesweep.core.ui.MyApplicationTheme
+import com.august.minesweep.core.ui.MineSweepTheme
 import com.august.minesweep.feature.mine.ui.MineUiState.Success
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -82,7 +82,7 @@ internal fun MineScreen(
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    MyApplicationTheme {
+    MineSweepTheme {
         MineScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }
@@ -90,7 +90,7 @@ private fun DefaultPreview() {
 @Preview(showBackground = true, widthDp = 480)
 @Composable
 private fun PortraitPreview() {
-    MyApplicationTheme {
+    MineSweepTheme {
         MineScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }
