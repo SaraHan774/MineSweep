@@ -23,13 +23,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.august.minesweep.feature.mine.ui.MineScreen
+import com.august.minesweep.feature.mine.ui.SampleScreen
 
 @Composable
 fun MainNavigation() {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "main") {
-        composable("main") { MineScreen(modifier = Modifier.padding(16.dp)) }
+        composable("main") { SampleScreen(modifier = Modifier.padding(16.dp)) }
     }
 }

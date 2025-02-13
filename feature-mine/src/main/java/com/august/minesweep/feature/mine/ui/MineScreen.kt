@@ -16,7 +16,7 @@
 
 package com.august.minesweep.feature.mine.ui
 
-import com.august.minesweep.core.ui.MineSweepTheme
+import com.august.minesweep.core.ui.MyApplicationTheme
 import com.august.minesweep.feature.mine.ui.MineUiState.Success
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -39,10 +39,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
-fun MineScreen(modifier: Modifier = Modifier, viewModel: MineViewModel = hiltViewModel()) {
+fun SampleScreen(modifier: Modifier = Modifier, viewModel: MineViewModel = hiltViewModel()) {
     val items by viewModel.uiState.collectAsStateWithLifecycle()
     if (items is Success) {
-        MineScreen(
+        SampleScreen(
             items = (items as Success).data,
             onSave = { name -> viewModel.addMine(name) },
             modifier = modifier
@@ -51,7 +51,7 @@ fun MineScreen(modifier: Modifier = Modifier, viewModel: MineViewModel = hiltVie
 }
 
 @Composable
-internal fun MineScreen(
+internal fun SampleScreen(
     items: List<String>,
     onSave: (name: String) -> Unit,
     modifier: Modifier = Modifier
@@ -82,15 +82,15 @@ internal fun MineScreen(
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    MineSweepTheme {
-        MineScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
+    MyApplicationTheme {
+        SampleScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }
 
 @Preview(showBackground = true, widthDp = 480)
 @Composable
 private fun PortraitPreview() {
-    MineSweepTheme {
-        MineScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
+    MyApplicationTheme {
+        SampleScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }
